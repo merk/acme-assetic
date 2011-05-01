@@ -1,0 +1,4 @@
+_welcome:
+    resource: "@AcmeAssetBundle/Controller/WelcomeController.php"
+    type:     annotation
+    prefix:   /

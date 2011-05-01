@@ -1,0 +1,33 @@
+imports:
+    - { resource: parameters.ini }
+
+framework:
+    secret:        %secret%
+    charset:       UTF-8
+    error_handler: null
+    csrf_protection:
+        enabled: true
+    router:        { resource: "%kernel.root_dir%/config/routing.yml" }
+    validation:    { enabled: true, annotations: true }
+    templating:    { engines: ['twig'] } #assets_version: SomeVersionScheme
+    session:
+        default_locale: %locale%
+        lifetime:       3600
+        auto_start:     true
+
+# Twig Configuration
+twig:
+    debug:            %kernel.debug%
+    strict_variables: %kernel.debug%
+
+# Assetic Configuration
+assetic:
+    debug:          %kernel.debug%
+    use_controller: false
+    filters:
+        cssrewrite: ~
+        scss: ~
+        # closure:
+        #     jar: %kernel.root_dir%/java/compiler.jar
+        # yui_css:
+        #     jar: %kernel.root_dir%/java/yuicompressor-2.4.2.jar
